@@ -16,7 +16,8 @@ class SessionsController < ApplicationController
     # Create the session
     session[:user_id] = auth.user.id
 
-    render :text => "Welcome #{auth.user.name}!"
+    #render :text => "Welcome #{auth.user.name}!"
+     redirect_to root_url
   end
 end
 def destroy
