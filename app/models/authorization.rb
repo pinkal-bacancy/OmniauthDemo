@@ -8,7 +8,7 @@ class Authorization < ApplicationRecord
     	a=auth_hash["info"]["name"]
     	puts "----------------info---------------"
     	puts "#{a}"
-    	user = User.create :name => auth_hash["user_info"]["name"], :email => auth_hash["user_info"]["email"]
+    	user = User.create :name => auth_hash["info"]["name"], :email => auth_hash["info"]["email"]
     	puts "--------------------user------------"
 
     	auth = create :user => user, :provider => auth_hash["provider"], :uid => auth_hash["uid"]
