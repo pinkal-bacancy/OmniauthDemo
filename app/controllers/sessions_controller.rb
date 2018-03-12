@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
     # Create the session
     session[:user_id] = auth.user.id
-    redirect_to root_url, :notice => "Signed in!"
+    redirect_to root_path, :notice => "Signed in!"
       end
 end
 def destroy
