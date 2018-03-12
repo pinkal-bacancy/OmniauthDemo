@@ -19,12 +19,11 @@ class SessionsController < ApplicationController
 
     # Create the session
     session[:user_id] = auth.user.id
-    redirect_to "sessions/create"
-  end
+    redirect_to root_url, :notice => "Signed in!"
+      end
 end
 def destroy
 	session[:user_id] = nil
-	render :text => "You've logged out!"
-end
+  redirect_to root_url, :notice => "Signed out!"end
 
 end
