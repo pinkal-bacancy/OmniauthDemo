@@ -15,12 +15,11 @@ class SessionsController < ApplicationController
     # Log him in or sign him up
     auth = Authorization.find_or_create(auth_hash)
     puts "------------auth-----------------"
-    puts auth
+    puts auth.user.name
 
     # Create the session
     session[:user_id] = auth.user.id
-
-    render :text => "Welcome #{auth.user.name}!"
+    render "sessions/create"
   end
 end
 def destroy
